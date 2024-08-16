@@ -273,19 +273,19 @@ def click_verify(driver: WebDriver):
         driver.switch_to.default_content()
 
     try:
-        logging.debug("Try to find the Cloudflare 'Verify you are human' button...")
+        logging.debug("Try to find the Cloudflare 'Vérifiez que vous êtes humain' button...")
         button = driver.find_element(
             by=By.XPATH,
-            value="//input[@type='button' and @value='Verify you are human']",
+            value="//input[@type='button' and @value='Vérifiez que vous êtes humain']",
         )
         if button:
             actions = ActionChains(driver)
             actions.move_to_element_with_offset(button, 5, 7)
             actions.click(button)
             actions.perform()
-            logging.debug("The Cloudflare 'Verify you are human' button found and clicked!")
+            logging.debug("The Cloudflare 'Vérifiez que vous êtes humain' button found and clicked!")
     except Exception:
-        logging.debug("The Cloudflare 'Verify you are human' button not found on the page.")
+        logging.debug("The Cloudflare 'Vérifiez que vous êtes humain' button not found on the page.")
 
     time.sleep(2)
 
